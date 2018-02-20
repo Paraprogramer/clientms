@@ -28,30 +28,37 @@
                                   <thead>
                                     <tr>
                                       <th>No</th>
-                                      <th>ID Petugas</th>
                                       <th>Nama Petugas</th>
-                                      <th>Email</th>
                                       <th>Username</th>
-                                      <th>Level</th>
+                                      <th>Password</th>
+                                      <th>Link Project</th>
                                       <th>Pilihan</th>
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr class="odd gradeX">
-                                      <td>Data</td>
-                                      <td>Data</td>
-                                      <td>Data</td>
-                                      <td>Data</td>
-                                      <td>Data</td>
-                                      <td>Data</td>
-                                      <td>
-                                      <div class="btn-group">
-                                          <?php echo anchor('client/daftar/','<button type="button" class="btn btn-success-alt"><i class="ti ti-zoom-in"></i></button>')?>
-                                          <?php echo anchor('client/edit/','<button type="button" class="btn btn-primary-alt"><i class="ti ti-pencil-alt"></i></button>')?>
-                                          <?php echo anchor('client/hapus/','<button type="button" class="btn btn-danger-alt"><i class="ti ti-trash"></i></button>',array('onclick' => "return confirm('Apakah Anda yakin akan menghapus data ini?')"))?>
-                                      </div>
-                                      </td>
-                                    </tr>
+
+                                    <!-- load data client dari db -->
+                                    <?php
+                                    $no = 1;
+                                    foreach ($clients as $client) { ?>
+                                     
+                                    
+                                      <tr class="odd gradeX">
+                                        <td><?php echo $no++ ?>.</td>
+                                        <td><?php echo $client['namaclient'] ?></td>
+                                        <td><?php echo $client['username'] ?></td>
+                                        <td><?php echo $client['password'] ?></td>
+                                        <td><?php echo $client['linkproject'] ?></td>
+                                        <td>
+                                        <div class="btn-group">
+
+                                            <?php echo anchor('client/view/'.$client['idclient'],'<button type="button" class="btn btn-success-alt"><i class="ti ti-zoom-in"></i></button>')?>
+                                            <?php echo anchor('client/edit/'.$client['idclient'],'<button type="button" class="btn btn-primary-alt"><i class="ti ti-pencil-alt"></i></button>')?>
+                                            <?php echo anchor('client/hapus/'.$client['idclient'],'<button type="button" class="btn btn-danger-alt"><i class="ti ti-trash"></i></button>',array('onclick' => "return confirm('Apakah Anda yakin akan menghapus data ini?')"))?>
+                                        </div>
+                                        </td>
+                                      </tr>
+                                    <?php } ?>  
                                   </tbody>
                                 </table>
 

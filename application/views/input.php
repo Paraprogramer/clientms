@@ -25,16 +25,34 @@
               									<div class="panel-body">
               										<!-- form input -->
                                   <form method="post" action="<?php echo base_url()?>client/create" enctype="multipart/form-data" class="form-horizontal row-border">
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                       <label class="col-sm-2 control-label">ID Client</label>
                                       <div class="col-sm-2">
                                         <input type="text" name="idptg" value="" class="form-control" readonly>
                                       </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                       <label class="col-sm-2 control-label">Nama Client*</label>
                                       <div class="col-sm-8">
                                         <input type="text" name="nmptg" value="" class="form-control" maxlength="60" required autofocus>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Username*</label>
+                                      <div class="col-sm-8">
+                                        <input type="text" name="usrptg" value="" class="form-control" maxlength="60" required autofocus>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Password*</label>
+                                      <div class="col-sm-8">
+                                        <input type="text" name="passptg" value="" class="form-control" required autofocus>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Link Project*</label>
+                                      <div class="col-sm-8">
+                                        <input type="text" name="linkptg" value="" class="form-control" required autofocus>
                                       </div>
                                     </div>
                                     <div class="form-group">
