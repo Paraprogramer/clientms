@@ -46,19 +46,42 @@ class Client extends CI_Controller {
 			# code...
 		}	
 	
-	public function edit() //halaman edit
+	public function edit($idclient)
 	{
-		
+		$data['title']="Edit Petugas";
+		$where = array(
+			'idclient' => $idclient
+		);
+		$data['client'] = $this->MClients->edit($where,'clients')->result();	
+		$this->load->view('edit',$data);
 	}
 	
-	public function update() //action edit
+	public function update()
 	{
-		
-	}
-	
-	public function hapus() //hapus
-	{
-		
-	}
+		$idclient = $this->input->post('idclient');
 
+		$data = array(
+			'namaclient' => $this->input->post('namaclient'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'linkproject' => $this->input->post('linkproject')
+		);
+		
+		$where = array(
+			'idclient' => $idclient
+		);
+		
+		$this->MClients->update($where,$data,'clients');
+		redirect('client/daftar');
+	}
+	
+	public function hapus($idclient)
+	{
+		$where = array(
+			'idclient' => $idclient
+		);
+		
+		$this->MClients->delete($where,'clients');
+		redirect('client/daftar');
+	}
 }
