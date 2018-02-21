@@ -5,6 +5,7 @@ class Client extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('MClients');
 
 	}
 
@@ -12,6 +13,7 @@ class Client extends CI_Controller {
 	{	
 		
 		$data['title']="Daftar Client";
+		$data['clients'] = $this->MClients->ListClients('clients')->result_array();
 		
 		$this->load->view('daftar',$data);
 	}
@@ -25,8 +27,24 @@ class Client extends CI_Controller {
 	
 	public function create() //action input
 	{
+		$data = array(
+			'namaclient' => $this->input->post('nmptg'),
+			'username' => $this->input->post('usrptg'),
+			'password' => $this->input->post('passptg'),
+			'linkproject' => $this->input->post('linkptg')
+		);
 
-	}	
+		$this->MClients->Save('clients', $data);
+		$this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
+		// header('tb_produk:'.base_url().'tb_produk');
+		redirect('client/daftar','refresh');
+
+	}
+
+	public function view() // view detail client
+		{
+			# code...
+		}	
 	
 	public function edit() //halaman edit
 	{
