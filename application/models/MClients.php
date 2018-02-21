@@ -14,7 +14,27 @@ class MClients extends CI_Model {
 		return $this->db->insert($table, $data);
 	}
 
+<<<<<<< HEAD
 }
 
 /* End of file MClients.php */
 /* Location: ./application/models/MClients.php */
+=======
+	public function delete($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	public function edit($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
+
+	public function update($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+}
+/* End of file MClients.php */
+/* Location: ./application/models/MClients.php */
+>>>>>>> data vian
