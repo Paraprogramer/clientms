@@ -62,7 +62,7 @@
                                       <div class="row">
                                         <div class="col-sm-8 col-sm-offset-2">
                                           <button type="submit" class="btn-primary btn">Simpan</button>
-                                          <button type="reset" class="btn-danger btn">Batal</button>
+                                          <a class="btn btn-danger" href="<?php echo base_url('client/daftar')?>">Batal</a>
                                         </div>
                                       </div>
                                     </div>
