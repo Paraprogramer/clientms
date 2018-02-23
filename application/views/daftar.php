@@ -48,7 +48,11 @@
                                         <td><?php echo $client['namaclient'] ?></td>
                                         <td><?php echo $client['username'] ?></td>
                                         <td><?php echo $client['password'] ?></td>
+<<<<<<< HEAD
                                         <td><a href="<?php echo $client['linkproject'] ?>">Klik</a></td>
+=======
+                                        <td><?php echo $client['linkproject'] ?></td>
+>>>>>>> f03c602c4a38a93cb0d076e285d5337b859b552e
                                         <td>
                                         <div class="btn-group">
 
