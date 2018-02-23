@@ -52,11 +52,7 @@
                                     <div class="form-group">
                                       <label class="col-sm-2 control-label">Link Project*</label>
                                       <div class="col-sm-8">
-<<<<<<< HEAD
                                         <input type="text" name="linkptg" value="http://" class="form-control" required autofocus>
-=======
-                                        <input type="text" name="linkptg" value="" class="form-control" required autofocus>
->>>>>>> f03c602c4a38a93cb0d076e285d5337b859b552e
                                       </div>
                                     </div>
                                     <div class="form-group">

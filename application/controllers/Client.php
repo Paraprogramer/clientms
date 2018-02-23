@@ -46,54 +46,6 @@ class Client extends CI_Controller {
 			# code...
 		}	
 	
-<<<<<<< HEAD
-	public function edit($idclient)
-=======
-<<<<<<< HEAD
-	public function edit() //halaman edit
->>>>>>> f03c602c4a38a93cb0d076e285d5337b859b552e
-	{
-		$data['title']="Edit Petugas";
-		$where = array(
-			'idclient' => $idclient
-		);
-		$data['client'] = $this->MClients->edit($where,'clients')->result();	
-		$this->load->view('edit',$data);
-	}
-	
-	public function update()
-	{
-		$idclient = $this->input->post('idclient');
-
-		$data = array(
-			'namaclient' => $this->input->post('namaclient'),
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password'),
-			'linkproject' => $this->input->post('linkproject')
-		);
-		
-		$where = array(
-			'idclient' => $idclient
-		);
-		
-		$this->MClients->update($where,$data,'clients');
-		redirect('client/daftar');
-	}
-	
-	public function hapus($idclient)
-	{
-		$where = array(
-			'idclient' => $idclient
-		);
-		
-		$this->MClients->delete($where,'clients');
-		redirect('client/daftar');
-	}
-}
-<<<<<<< HEAD
-
-=======
-=======
 	public function edit($idclient)
 	{
 		$data['title']="Edit Petugas";
@@ -133,5 +85,4 @@ class Client extends CI_Controller {
 		redirect('client/daftar');
 	}
 }
->>>>>>> data vian
->>>>>>> f03c602c4a38a93cb0d076e285d5337b859b552e
+
