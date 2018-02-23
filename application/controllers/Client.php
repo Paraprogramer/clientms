@@ -46,6 +46,7 @@ class Client extends CI_Controller {
 			# code...
 		}	
 	
+<<<<<<< HEAD
 	public function edit() //halaman edit
 	{
 		
@@ -62,3 +63,44 @@ class Client extends CI_Controller {
 	}
 
 }
+=======
+	public function edit($idclient)
+	{
+		$data['title']="Edit Petugas";
+		$where = array(
+			'idclient' => $idclient
+		);
+		$data['client'] = $this->MClients->edit($where,'clients')->result();	
+		$this->load->view('edit',$data);
+	}
+	
+	public function update()
+	{
+		$idclient = $this->input->post('idclient');
+
+		$data = array(
+			'namaclient' => $this->input->post('namaclient'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'linkproject' => $this->input->post('linkproject')
+		);
+		
+		$where = array(
+			'idclient' => $idclient
+		);
+		
+		$this->MClients->update($where,$data,'clients');
+		redirect('client/daftar');
+	}
+	
+	public function hapus($idclient)
+	{
+		$where = array(
+			'idclient' => $idclient
+		);
+		
+		$this->MClients->delete($where,'clients');
+		redirect('client/daftar');
+	}
+}
+>>>>>>> data vian
