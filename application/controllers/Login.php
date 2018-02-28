@@ -5,12 +5,11 @@ class Login extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-    $this->isLogin();
+    // $this->isLogin();
 		$this->load->model('MLogin');
 	}
 
   public function index(){
-      $this->load->view('login');
 			$data['title'] = "Halaman Login";
       $this->load->view('login', $data);
   }
@@ -20,12 +19,10 @@ class Login extends CI_Controller {
     $result = $this->MLogin->validate();
 
     if(! $result){
-      $msg = '<font color=red>Invalid username and/or password.</font><br />';
-      $this->index($msg);
       $this->session->set_flashdata('msg', 'Username / Password Salah');
       redirect('login');
     }else{
-        redirect('client/daftar');
+      redirect('client/daftar');
     }
 	}
 
