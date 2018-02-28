@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class MClients extends CI_Model {
+class MLogin extends CI_Model {
 
 	public function validate($table)
 	{
