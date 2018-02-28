@@ -22,6 +22,8 @@ class Login extends CI_Controller {
     if(! $result){
       $msg = '<font color=red>Invalid username and/or password.</font><br />';
       $this->index($msg);
+      $this->session->set_flashdata('msg', 'Username / Password Salah');
+      redirect('login');
     }else{
         redirect('client/daftar');
     }
