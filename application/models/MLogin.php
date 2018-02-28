@@ -2,17 +2,17 @@
 
 class MLogin extends CI_Model {
 
-	public function validate($table)
+	public function validate()
 	{
     $username = $this->security->xss_clean($this->input->post('username'));
-    $password = $this->security->xss_clean($this->input->post('password'));
+    $password = sha1($this->security->xss_clean($this->input->post('password')));
 
     $this->db->where('username', $username);
     $this->db->where('password', $password);
 
     $query = $this->db->get('users');
 
-    if($query->num_rows == 1)
+    if($query->num_rows() == 1)
     {
         $row = $query->row();
         $data = array(
