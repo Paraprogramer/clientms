@@ -5,7 +5,7 @@
 	<title>Login</title>
 	<?php $this->load->view('include/head'); ?>
 
-	
+
 	<link type="text/css" href="<?php echo base_url() ?>bootstrap/assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">
 	<link type="text/css" href="<?php echo base_url() ?>bootstrap/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link type="text/css" href="<?php echo base_url() ?>bootstrap/assets/fonts/themify-icons/themify-icons.css" rel="stylesheet">               <!-- Themify Icons -->
@@ -25,11 +25,15 @@
 						<h2><?php echo $title ?></h2>
 					</div>
 					<div class="panel-body">
-						
+						<?php if (isset($_SESSION['msg']) ): ?>
+							<div class="alert alert-danger">
+	  							<strong>Login gagal !</strong> <?php echo $this->session->flashdata('msg'); ?>
+							</div>
+						<?php endif; ?>
 						<form method="post" action="<?php echo base_url()?>login/check" class="form-horizontal">
 							<div class="form-group mb-md">
 								<div class="col-xs-12">
-									<div class="input-group">							
+									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="ti ti-user"></i>
 										</span>
